@@ -29,6 +29,27 @@ body{
   line-height:1.6;
   overflow-x:hidden;
 }
+.skip-link{
+  position:fixed;
+  left:-9999px;
+  top:0.75rem;
+  z-index:100000;
+  padding:0.625rem 1rem;
+  background:var(--bg3);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:600;
+  text-decoration:none;
+  border:1px solid var(--border2);
+  border-radius:8px;
+  white-space:nowrap;
+}
+.skip-link:focus{
+  left:0.75rem;
+  outline:2px solid var(--sky);
+  outline-offset:2px;
+}
 
 .ticker{
   background:var(--bg2);
