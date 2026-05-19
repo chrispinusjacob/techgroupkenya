@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Tech Group Kenya | Learn, Network & Grow in Tech</title>
+<meta name="description" content="A Kenyan tech community platform helping developers, students, startups, and tech enthusiasts discover learning resources, tech events, communities, blogs, networking opportunities, internships, jobs, hackathons, certifications, and career growth across Kenya's growing tech ecosystem in Kenya and the world.">
+<link rel="icon" href="https://cdn.techgroupkenya.co.ke/images/Tgklogo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="https://cdn.techgroupkenya.co.ke/images/Tgklogo.jpg">
+<meta property="og:image" content="https://cdn.techgroupkenya.co.ke/images/Tgklogo.jpg">
+<link rel="preconnect" href="https://cdn.techgroupkenya.co.ke" crossorigin>
+<link rel="preload" as="image" href="https://cdn.techgroupkenya.co.ke/images/hero1.png" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="assets/tgk.css">
+<link rel="stylesheet" href="assets/tgk-single.css">
+<link rel="stylesheet" href="assets/tgk-loader.css">
+
+</head>
+<body>
+
+<div id="loader" role="status" aria-live="polite" aria-label="Loading">
+  <div id="load" aria-hidden="true">
+    <div>G</div>
+    <div>N</div>
+    <div>I</div>
+    <div>D</div>
+    <div>A</div>
+    <div>O</div>
+    <div>L</div>
+  </div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Page scroll progress">
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+</div>
+
+<nav id="mainNav">
+  <a href="#home" class="nav-logo" aria-label="Tech Group Kenya ? Home">
+    <img class="nav-logo-img" src="https://cdn.techgroupkenya.co.ke/images/Tgklogo.jpg" alt="" width="42" height="42" decoding="async">
+    <span class="nav-logo-text">Tech Group Kenya</span>
+  </a>
+  <div class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#features">Services</a>
+    <a href="https://skillme.techgroupkenya.co.ke/jobs/tgk-careers" target="_blank" rel="noopener">Careers</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <div class="nav-cta">
+    <a href="#donate" class="btn-primary">Donate</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="tgk-scroll-trust" id="tgkScrollTrust" aria-hidden="true" hidden>
+  <div class="tgk-scroll-trust-chips" aria-hidden="true">
+    <span class="hero-chip hero-chip-ke">KE</span>
+    <span class="hero-chip hero-chip-ng">NG</span>
+    <span class="hero-chip hero-chip-dev">DEV</span>
+    <span class="hero-chip hero-chip-more">+</span>
+  </div>
+  <span class="tgk-scroll-trust-text"><strong>Learn</strong> &middot; <strong>Network</strong> &middot; <strong>Grow</strong> in tech</span>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#features">Services</a>
+  <a href="https://skillme.techgroupkenya.co.ke/jobs/tgk-careers" target="_blank" rel="noopener">Careers</a>
+  <a href="#about">About</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+  <a href="#faq">FAQ</a>
+  <div class="m-btns">
+    <a href="#donate" class="btn-primary">Donate</a>
+  </div>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-content silk-reveal-left">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Kenya's tech community
+    </div>
+    <h1>
+      <span class="hero-headline-lead">Innovating the Future of</span>
+      <span class="hero-typewriter-line" aria-live="polite">
+        <span class="typewriter" data-words="Technology,Innovation,Solutions,Development,Digital Transformation,AI &amp; ML,Cloud Computing,Software Engineering,Data Science,Cybersecurity,Mobile Apps,Web Development,Blockchain,IoT,DevOps"></span>
+      </span>
+    </h1>
+    <p class="hero-sub">A Kenyan tech community platform helping developers, students, startups, and tech enthusiasts discover learning resources, tech events, communities, blogs, networking opportunities, internships, jobs, hackathons, certifications, and career growth opportunities across Kenya&rsquo;s growing tech ecosystem in Kenya and the world.</p>
+    <div class="hero-btns">
+      <a href="#features" class="btn-hero">
+        Explore services
+        <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+      </a>
+      <a href="https://redirect.techgroupkenya.co.ke" class="btn-outline" target="_blank" rel="noopener">Join community</a>
+    </div>
+    <div class="hero-trust" id="heroTrust">
+      <div class="hero-trust-chips" role="list" aria-label="Community focus areas">
+        <span class="hero-chip hero-chip-ke" role="listitem" title="Kenya">KE</span>
+        <span class="hero-chip hero-chip-ng" role="listitem" title="Networking">NG</span>
+        <span class="hero-chip hero-chip-dev" role="listitem" title="Developers">DEV</span>
+        <span class="hero-chip hero-chip-more" role="listitem" title="Join the community">+</span>
+      </div>
+      <p class="hero-trust-text">
+        <span class="hero-trust-word"><strong>Learn</strong></span>
+        <span class="hero-trust-sep" aria-hidden="true"></span>
+        <span class="hero-trust-word"><strong>Network</strong></span>
+        <span class="hero-trust-sep" aria-hidden="true"></span>
+        <span class="hero-trust-word"><strong>Grow</strong></span>
+        <span class="hero-trust-tail">in tech</span>
+      </p>
+    </div>
+  </div>
+  <div class="hero-visual silk-reveal-right">
+    <div class="float-badge fb-left">
+      <div class="float-badge-icon" style="background:rgba(61,204,142,.12)">
+        <svg width="18" height="18" fill="none" stroke="#3DCC8E" stroke-width="2" stroke-linecap="round" viewBox="0 0 18 18"><polyline points="2,12 7,7 11,10 16,4"/></svg>
+      </div>
+      <div class="float-badge-info">
+        <div class="val">Active</div>
+        <div class="lbl">Community growth</div>
+      </div>
+    </div>
+    <div class="float-badge fb-right">
+      <div class="float-badge-icon" style="background:rgba(255,153,0,.12)">
+        <svg width="18" height="18" fill="none" stroke="#ff9900" stroke-width="2" stroke-linecap="round" viewBox="0 0 18 18"><circle cx="9" cy="9" r="7"/><polyline points="9,5 9,9 12,11"/></svg>
+      </div>
+      <div class="float-badge-info">
+        <div class="val">Events</div>
+        <div class="lbl">Open now</div>
+      </div>
+    </div>
+    <div class="kenya-map-card" role="img" aria-label="Connecting Techies">
+      <div class="kenya-map-topbar">
+        <div class="dash-dots">
+          <span style="background:#E85A5A"></span>
+          <span style="background:#F0A030"></span>
+          <span style="background:#3DCC8E"></span>
+        </div>
+        <span class="kenya-map-badge" style="margin-left:auto">47 counties</span>
+      </div>
+      <div class="kenya-map-body">
+        <img src="assets/kenya-map.svg" alt="" class="kenya-map-svg" width="458" height="581" decoding="async">
+        <p class="kenya-map-caption">Connecting Techies</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="logos-section">
+  <div class="logos-label">Every major field in technology</div>
+  <div class="logos-track-wrap">
+    <div class="logos-track" id="logosTrack"></div>
+  </div>
+</div>
+
+<section class="stats-section tgk-stats-three">
+  <div class="stat-block">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+    </div>
+    <div class="stat-num" data-target="5000" data-suffix="+">0</div>
+    <div class="stat-label">Community Members</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%" data-width="92%"></div></div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-icon" style="background:rgba(61,204,142,.1);border-color:rgba(61,204,142,.15)">
+      <svg viewBox="0 0 24 24" style="stroke:var(--green)"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+    </div>
+    <div class="stat-num" data-target="200" data-suffix="+">0</div>
+    <div class="stat-label">Tech Events</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%;background:#3DCC8E" data-width="76%"></div></div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-icon" style="background:rgba(136,136,248,.1);border-color:rgba(136,136,248,.15)">
+      <svg viewBox="0 0 24 24" style="stroke:#8888F8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+    </div>
+    <div class="stat-num" data-target="1000" data-suffix="+">0</div>
+    <div class="stat-label">Career Opportunities</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%;background:#8888F8" data-width="88%"></div></div>
+  </div>
+</section>
+
+<section class="features-section" id="features">
+  <div class="features-header silk-reveal">
+    <div class="section-tag">What we offer</div>
+    <h2 class="section-title">Everything Kenya's tech community needs</h2>
+    <p class="section-sub">From learning resources to events ? one community to learn, network, and grow your tech career.</p>
+  </div>
+  <div class="sticky-layout">
+    <div class="sticky-cards">
+
+      <div class="sticky-card active" data-panel="0">
+        <div class="sticky-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Tech Blog</h3>
+        <p>Stay informed with the latest tech trends, tutorials, and industry insights from Kenya's leading tech voices.</p>
+        <div class="sticky-card-pills">
+          <span class="sc-pill">Weekly posts</span>
+          <span class="sc-pill">Expert insights</span>
+          <span class="sc-pill">Community stories</span>
+        </div>
+      </div>
+
+      <div class="sticky-card" data-panel="1">
+        <div class="sticky-card-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Skill Me</h3>
+        <p>Free courses, job opportunities, and upskilling resources. Learn from industry experts and advance your career.</p>
+        <div class="sticky-card-pills">
+          <span class="sc-pill">Free courses</span>
+          <span class="sc-pill">Certifications</span>
+          <span class="sc-pill">Mentorship</span>
+        </div>
+      </div>
+
+      <div class="sticky-card" data-panel="2">
+        <div class="sticky-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+        </div>
+        <h3>Tech Events</h3>
+        <p>Workshops, conferences, and networking events designed to connect and upskill Kenya's tech community.</p>
+        <div class="sticky-card-pills">
+          <span class="sc-pill">Monthly meetups</span>
+          <span class="sc-pill">Workshops</span>
+          <span class="sc-pill">Conferences</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sticky-panel-wrap">
+      <div class="sticky-panel">
+        <div class="panel-topbar">
+          <div class="panel-dots">
+            <span style="background:#E85A5A"></span>
+            <span style="background:#F0A030"></span>
+            <span style="background:#3DCC8E"></span>
+          </div>
+          <span style="font-size:11px;color:var(--text3);margin-left:8px" id="panelLabel">Tech Blog</span>
+        </div>
+        <div class="panel-content tgk-feature-visual">
+
+          <div class="panel-view panel-view-image active" id="panel-0">
+            <a href="https://blog.techgroupkenya.co.ke" class="tgk-feature-link" target="_blank" rel="noopener noreferrer" aria-label="Open Tech Blog">
+              <img src="https://cdn.techgroupkenya.co.ke/images/blog.jpg" alt="TGK Blog preview" width="1200" height="675" loading="lazy" decoding="async">
+              <span class="tgk-feature-link-hint">Open Tech Blog</span>
+            </a>
+          </div>
+
+          <div class="panel-view panel-view-image" id="panel-1">
+            <a href="https://skillme.techgroupkenya.co.ke" class="tgk-feature-link" target="_blank" rel="noopener noreferrer" aria-label="Open Skill Me">
+              <img src="https://cdn.techgroupkenya.co.ke/images/skill.jpg" alt="Skill Me preview" width="1200" height="675" loading="lazy" decoding="async">
+              <span class="tgk-feature-link-hint">Open Skill Me</span>
+            </a>
+          </div>
+
+          <div class="panel-view panel-view-image" id="panel-2">
+            <a href="https://events.techgroupkenya.co.ke" class="tgk-feature-link" target="_blank" rel="noopener noreferrer" aria-label="Open Tech Events">
+              <img src="https://cdn.techgroupkenya.co.ke/images/events.jpg" alt="TGK Events preview" width="1200" height="675" loading="lazy" decoding="async">
+              <span class="tgk-feature-link-hint">Open Tech Events</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="donate">
+  <div class="pricing-grid" style="max-width:960px;margin:40px auto 0">
+    <div class="price-card">
+      <div class="price-amount tgk-price-title">Join the Community</div>
+      <p class="price-period">Free access for developers, students, startups, and tech enthusiasts across Kenya.</p>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Tech events, meetups &amp; workshops</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Learning resources, blogs &amp; Skill Me programs</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>WhatsApp groups &amp; social channels</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Career opportunities, networking &amp; mentorship</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Discover and stay updated with Kenya&rsquo;s tech ecosystem</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Advertisements &amp; ads</li>
+      </ul>
+      <a href="https://redirect.techgroupkenya.co.ke" class="price-btn price-btn-ghost" target="_blank" rel="noopener">Join Community</a>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-badge">Give back</div>
+      <div class="price-amount tgk-price-title">Support Our Platform</div>
+      <p class="price-period">Help us keep the community growing and accessible to more people across Kenya.</p>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Support the growth of our tech community platforms</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Help us improve learning and networking opportunities</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Support community outreach across more counties</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Help us continue sharing tech events, opportunities &amp; resources</li>
+      </ul>
+      <p class="tgk-donate-note">Any amount is appreciated.</p>
+      <a href="https://paystack.shop/pay/techgroupkenya-support" class="price-btn price-btn-primary" target="_blank" rel="noopener">Donate</a>
+    </div>
+    <div class="price-card">
+      <div class="price-amount tgk-price-title">Partner With Us</div>
+      <p class="price-period">Collaborate with us to grow Kenya&rsquo;s tech ecosystem.</p>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Community &amp; ecosystem partnerships</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Brand visibility within the tech community</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Workshop &amp; content collaborations</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Startup, hiring &amp; community support</li>
+      </ul>
+      <a href="#contact" class="price-btn price-btn-ghost">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<section class="security-section" id="about">
+  <div class="tgk-about-blurb" style="text-align:center;max-width:720px;margin:0 auto 56px;padding:0 24px">
+    <div class="section-tag">About us</div>
+    <h2 class="section-title" style="margin-bottom:16px">Who We Are</h2>
+    <p class="section-sub" style="margin:0 auto 16px">We identified a gap in Kenya&rsquo;s tech ecosystem where many developers, students, startups, and tech enthusiasts struggle to discover opportunities, connect with communities, access learning resources, and grow their careers.</p>
+    <p class="section-sub" style="margin:0 auto">Tech Group Kenya was created to bridge that gap through tech events, communities, learning platforms, blogs, networking, and career opportunities designed for Kenya&rsquo;s growing tech ecosystem.</p>
+  </div>
+  <div class="security-inner">
+    <div>
+      <div class="section-tag">Our Pillars</div>
+      <h2 class="section-title">Built for Kenya&rsquo;s Tech Ecosystem</h2>
+      <p class="section-sub" style="margin-bottom:24px">Driven by community, innovation, and local expertise, we create opportunities for learning, collaboration, networking, career growth, and innovation across Kenya&rsquo;s growing tech ecosystem in Kenya and the world.</p>
+      <a href="#features" class="btn-outline" style="display:inline-block">View Our Services</a>
+    </div>
+    <div class="security-badges">
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="sec-badge-name">Innovate</div>
+        <div class="sec-badge-desc">Driving breakthrough solutions and cutting-edge technologies</div>
+        <div class="sec-badge-status">Our pillar</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="sec-badge-name">Collaborate</div>
+        <div class="sec-badge-desc">Partnerships and teamwork for shared impact</div>
+        <div class="sec-badge-status">Our pillar</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="sec-badge-name">Transform</div>
+        <div class="sec-badge-desc">Meaningful change and lasting value</div>
+        <div class="sec-badge-status">Our pillar</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="sec-badge-name">Community</div>
+        <div class="sec-badge-desc">Built by the community, for the community</div>
+        <div class="sec-badge-status">Always on</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section" id="testimonials">
+  <div style="text-align:center">
+    <div class="section-tag">Community Stories</div>
+    <h2 class="section-title">Trusted by Kenya&rsquo;s Tech Community</h2>
+  </div>
+  <div class="testi-track-wrap">
+    <div class="testi-track" id="testiTrack"></div>
+  </div>
+  <div style="display:flex;justify-content:center;margin-top:32px">
+    <button id="testiToggle" onclick="toggleTestimonials()" aria-label="Pause testimonials" style="background:var(--bg2);border:1px solid var(--border2);color:var(--text2);padding:10px 18px;border-radius:24px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;transition:border-color .5s var(--silk),color .5s var(--silk)">
+      <svg id="testiIcon" width="14" height="14" fill="currentColor" stroke="none" viewBox="0 0 24 24"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+      <span id="testiLabel">Pause</span>
+    </button>
+  </div>
+</section>
+
+<section class="app-section">
+  <div class="app-inner">
+    <div>
+      <div class="section-tag">Join us</div>
+      <h2 class="section-title">Your community, one link away</h2>
+      <p class="section-sub">Blog, Skill Me, events, and community links&mdash;all in one place.<br><span class="tgk-playstore-soon">Coming soon to Play Store.</span></p>
+      <ul class="tgk-app-features price-features">
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>Tech events, meetups &amp; workshops</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>Learning resources, blogs &amp; Skill Me programs</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>WhatsApp groups &amp; social channels</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>Career opportunities, networking &amp; mentorship</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>Discover and stay updated with Kenya&rsquo;s tech ecosystem</li>
+        <li><svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,8 6,12 14,4"/></svg>Advertisements &amp; ads</li>
+      </ul>
+      <a href="https://redirect.techgroupkenya.co.ke" class="btn-hero tgk-app-join-btn" target="_blank" rel="noopener">
+        Join Community
+        <svg viewBox="0 0 16 16" aria-hidden="true"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+      </a>
+      <div class="app-btns tgk-app-btns-two">
+        <div class="app-store-btn tgk-app-store-soon" aria-label="Coming soon to Play Store">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="var(--sky)" stroke="none" aria-hidden="true"><path d="M3.18 23.76c.3.17.65.19.96.07l12.45-7.2-2.68-2.68-10.73 9.81zM20.54 10.26L17.76 8.6l-3.04 3.04 3.04 3.04 2.8-1.62c.8-.46.8-1.34.02-1.8zM2.22.24C1.9.43 1.67.8 1.67 1.28v21.44c0 .48.23.84.55 1.04l.12.07 12-12L2.22.24zM14.55 11.85L3.18.24c-.3-.17-.67-.15-.97.07l12.03 11.54-1.69 1.69 1.69 1.69.01-.01L14.55 11.85z"/></svg>
+          <div class="app-store-btn-info">
+            <span class="app-store-btn-sub">Coming soon</span>
+            <span class="app-store-btn-name">Play Store</span>
+          </div>
+        </div>
+        <a href="https://skillme.techgroupkenya.co.ke/upskill/auth/login" target="_blank" rel="noopener" class="app-store-btn tgk-web-app-btn">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="var(--text)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <div class="app-store-btn-info">
+            <span class="app-store-btn-sub">Open now</span>
+            <span class="app-store-btn-name">Web App</span>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="phoneTiltWrap" style="display:flex;justify-content:center;align-items:center;perspective:1200px">
+      <div id="phoneFrame" style="width:276px;background:var(--bg3);border:2px solid var(--border2);border-radius:40px;padding:8px;box-shadow:0 12px 32px rgba(0,0,0,.25),0 0 0 1px var(--border);transform-style:preserve-3d;transition:transform .8s var(--silk),box-shadow .8s var(--silk);will-change:transform">
+        <div style="border-radius:34px;overflow:hidden;aspect-ratio:9/19.5;background:var(--bg);position:relative">
+          <img src="https://cdn.techgroupkenya.co.ke/images/skillmescreenshot.jpg" alt="TGK Hub app screenshot" width="390" height="844" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div style="display:none;position:absolute;inset:0;background:var(--bg2);align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:24px">
+            <svg width="40" height="40" fill="none" stroke="var(--text3)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+            <div style="font-family:'Outfit',sans-serif;font-size:14px;font-weight:700;color:var(--text2)">Coming soon</div>
+            <div style="font-size:11px;color:var(--text3);line-height:1.5">Play Store</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="security-section" id="careers">
+  <div style="text-align:center;max-width:640px;margin:0 auto;padding:0 24px">
+    <div class="section-tag">Our careers</div>
+    <h2 class="section-title" style="margin-bottom:16px">Join the Tech Group Kenya team</h2>
+    <p class="section-sub" style="margin:0 auto 28px">Open roles, internships, and career opportunities at Tech Group Kenya are posted on SkillMe. Visit our careers hub to explore positions and apply.</p>
+    <a href="https://skillme.techgroupkenya.co.ke/jobs/tgk-careers" class="btn-primary" target="_blank" rel="noopener">
+      View careers on SkillMe
+      <svg viewBox="0 0 16 16" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-2px;margin-left:6px"><path d="M4 12L12 4M12 4H6M12 4V10"/></svg>
+    </a>
+    <p class="careers-apply-note" style="margin-top:16px">skillme.techgroupkenya.co.ke/jobs/tgk-careers</p>
+  </div>
+</section>
+
+<section class="contact-section-tgk" id="contact">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="section-tag">Get in touch</div>
+    <h2 class="section-title">Contact us</h2>
+    <p class="section-sub">Questions, partnerships, or media&mdash;we&rsquo;d love to hear from you.</p>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info-card tgk-reach-card">
+      <h3 class="tgk-reach-title">Reach us</h3>
+      <div class="contact-info-row">
+        <div class="tgk-contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div class="tgk-contact-details">
+          <strong>Email</strong>
+          <p><a href="mailto:echo@techgroupkenya.co.ke">echo@techgroupkenya.co.ke</a></p>
+        </div>
+      </div>
+      <div class="contact-info-row">
+        <div class="tgk-contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="tgk-contact-details">
+          <strong>Business Hours</strong>
+          <p class="tgk-business-hours">Mon &ndash; Fri: 9:00 AM &ndash; 6:00 PM EAT<br>Sat: 10:00 AM &ndash; 2:00 PM EAT</p>
+        </div>
+      </div>
+      <div class="contact-info-row">
+        <div class="tgk-contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="tgk-contact-details">
+          <strong>Community</strong>
+          <p><a href="https://redirect.techgroupkenya.co.ke" target="_blank" rel="noopener">Join on WhatsApp &amp; social</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card tgk-contact-form-card">
+      <div class="tgk-form-loader" hidden aria-hidden="true">
+        <div class="tgk-form-load" aria-hidden="true">
+          <span>G</span><span>N</span><span>I</span><span>D</span><span>A</span><span>O</span><span>L</span>
+        </div>
+        <p class="tgk-form-loader-label">Sending your message</p>
+      </div>
+      <div class="tgk-formspree-banner tgk-formspree-success" data-fs-success>
+        <svg class="tgk-formspree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span>Thanks for your submission! We&rsquo;ll get back to you soon.</span>
+      </div>
+      <div class="tgk-formspree-banner tgk-formspree-error" data-fs-error>
+        <svg class="tgk-formspree-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span>Oops! There was a problem submitting your form. Please try again.</span>
+      </div>
+      <form id="tgk-contact-form" class="tgk-contact-form" novalidate autocomplete="on">
+        <input type="hidden" name="form_loaded_at" value="">
+        <div class="tgk-hp-field" aria-hidden="true">
+          <label for="contact-company">Company</label>
+          <input type="text" id="contact-company" name="_gotcha" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="tgk-hp-field" aria-hidden="true">
+          <label for="contact-website">Website</label>
+          <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <label for="contact-name">Name</label>
+        <input type="text" id="contact-name" name="name" data-fs-field required autocomplete="name" maxlength="100" minlength="2" spellcheck="false">
+        <span class="tgk-field-error" data-fs-error="name"></span>
+        <label for="contact-email">Email</label>
+        <input type="email" id="contact-email" name="email" data-fs-field required autocomplete="email" maxlength="254" inputmode="email">
+        <span class="tgk-field-error" data-fs-error="email"></span>
+        <label for="contact-subject">Subject</label>
+        <input type="text" id="contact-subject" name="_subject" data-fs-field required maxlength="200" minlength="2">
+        <span class="tgk-field-error" data-fs-error="_subject"></span>
+        <label for="contact-message">Message</label>
+        <textarea id="contact-message" name="message" data-fs-field required maxlength="5000" minlength="10" rows="6"></textarea>
+        <span class="tgk-field-error" data-fs-error="message"></span>
+        <p class="tgk-contact-privacy">We only use your details to respond to this inquiry. Never share passwords or payment info.</p>
+        <button type="submit" class="btn-hero tgk-contact-submit" data-fs-submit-btn>Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div style="text-align:left">
+        <div class="section-tag">Got questions?</div>
+        <h2 class="section-title">Frequently asked</h2>
+      </div>
+      <button id="faqToggleAll" onclick="toggleAllFaq()" style="background:transparent;border:1px solid var(--border2);color:var(--text2);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;padding:8px 16px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .2s;white-space:nowrap;margin-bottom:6px">
+        <svg id="faqToggleIcon" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        <span id="faqToggleLabel">Expand all</span>
+      </button>
+    </div>
+    <div class="faq-list" id="faqList"></div>
+  </div>
+</section>
+
+<footer class="tgk-site-footer">
+  <div class="tgk-site-footer-inner">
+    <div class="tgk-footer-grid">
+      <div class="tgk-footer-section tgk-footer-brand">
+        <img class="tgk-footer-logo" src="https://cdn.techgroupkenya.co.ke/images/Tgklogo.jpg" alt="" width="52" height="52" decoding="async">
+        <h3>Tech Group Kenya</h3>
+        <p>Building Kenya&rsquo;s vibrant tech community through learning, networking, and career opportunities that empower the next generation of innovators.</p>
+        <div class="tgk-social-icons">
+          <a href="https://redirect.techgroupkenya.co.ke/" target="_blank" rel="noopener" aria-label="Linktree"><i class="fas fa-link"></i></a>
+          <a href="https://x.com/TechGroupKenya" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com/techgroup_Kenya" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/company/techgroupkenya" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://redirect.techgroupkenya.co.ke/7FJI7o" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="tgk-footer-section">
+        <h3>Quick Links</h3>
+        <ul class="tgk-footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#features">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://blog.techgroupkenya.co.ke" target="_blank" rel="noopener">Blog</a></li>
+        </ul>
+      </div>
+      <div class="tgk-footer-section">
+        <h3>Our Services</h3>
+        <ul class="tgk-footer-links">
+          <li><a href="https://blog.techgroupkenya.co.ke" target="_blank" rel="noopener">Tech Blog</a></li>
+          <li><a href="https://skillme.techgroupkenya.co.ke" target="_blank" rel="noopener">Skill Me</a></li>
+          <li><a href="https://events.techgroupkenya.co.ke" target="_blank" rel="noopener">Tech Events</a></li>
+        </ul>
+      </div>
+      <div class="tgk-footer-section">
+        <h3>Support Us</h3>
+        <p>Like our work? Help us innovate and grow Kenya&rsquo;s tech community.</p>
+        <a href="#donate" class="btn-primary tgk-footer-donate"><i class="fas fa-heart"></i> Donate Now</a>
+      </div>
+    </div>
+    <div class="tgk-footer-sponsors" aria-label="Sponsors">
+      <p class="tgk-footer-sponsors-label">Supported by</p>
+      <div class="tgk-sponsor-logos">
+        <a href="https://aws.amazon.com/startups/" class="tgk-sponsor-logo" target="_blank" rel="noopener noreferrer" aria-label="AWS Startups">
+          <img src="https://cdn.techgroupkenya.co.ke/images/aws%20startups.png" alt="AWS Startups" width="220" height="48" loading="lazy" decoding="async">
+        </a>
+      </div>
+    </div>
+    <div class="tgk-footer-bottom">
+      <div class="tgk-footer-legal">
+        <p class="tgk-footer-copy">&copy;2024-<span class="tgk-copyright-year">2026</span> Tech Group Kenya. All Rights Reserved.</p>
+        <div class="tgk-legal-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+      </div>
+      <p class="tgk-footer-tagline">Innovating the Future of Technology</p>
+      <p class="tgk-footer-credit">This website was designed and delivered by <a href="https://cj.html-5.me" target="_blank" rel="noopener">CJ</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="scripts/tgk-loader.js"></script>
+<script src="scripts/tgk.js"></script>
+<script src="scripts/tgk-contact-form.js"></script>
+<script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+  formspree('initForm', {
+    formElement: '#tgk-contact-form',
+    formId: 'xaqknboz',
+    onInit: function (ctx) {
+      if (window.TGK_CONTACT) window.TGK_CONTACT.bindGuards(ctx.form);
+    },
+    onSubmit: function (ctx) {
+      if (!window.TGK_CONTACT) return;
+      var result = window.TGK_CONTACT.validateContactForm(ctx.form);
+      if (result.ok) window.TGK_CONTACT.setFormLoading(ctx.form, true);
+    },
+    onSuccess: function (ctx) {
+      if (window.TGK_CONTACT) {
+        window.TGK_CONTACT.setFormLoading(ctx.form, false);
+        window.TGK_CONTACT.recordSubmit();
+      }
+    },
+    onError: function (ctx) {
+      if (window.TGK_CONTACT) window.TGK_CONTACT.setFormLoading(ctx.form, false);
+    },
+    onFailure: function (ctx) {
+      if (window.TGK_CONTACT) window.TGK_CONTACT.setFormLoading(ctx.form, false);
+    },
+  });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+</body>
+</html>
