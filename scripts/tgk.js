@@ -233,11 +233,16 @@ function togglePricing(){
   });
 }
 
-document.querySelectorAll('#faqList .faq-item .faq-q').forEach((q)=>{
-  q.addEventListener('click',()=>{
-    q.closest('.faq-item').classList.toggle('open');
+(function initFaqAccordion(){
+  const faqList=document.getElementById('faqList');
+  if(!faqList||faqList.dataset.ready==='1')return;
+  faqList.dataset.ready='1';
+  faqList.querySelectorAll('.faq-item .faq-q').forEach((q)=>{
+    q.addEventListener('click',()=>{
+      q.closest('.faq-item').classList.toggle('open');
+    });
   });
-});
+})();
 
 let allExpanded=false;
 function toggleAllFaq(){

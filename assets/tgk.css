@@ -857,11 +857,17 @@ nav.scrolled{background:rgba(15,19,25,.95);backdrop-filter:blur(20px);border-col
 }
 .price-features li svg{width:16px;height:16px;fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
 .price-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
   width:100%;
   padding:12px;border-radius:10px;
   font-family:'DM Sans',sans-serif;
   font-size:14px;font-weight:600;
+  text-align:center;
+  text-decoration:none;
   cursor:pointer;transition:all .2s;border:none;
+  box-sizing:border-box;
 }
 .price-btn-ghost{
   background:transparent;
@@ -1159,6 +1165,11 @@ footer{
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex;min-width:44px;min-height:44px;align-items:center;justify-content:center}
   .mobile-menu{display:flex}
+  .mobile-menu .m-btns{
+    width:min(100%,260px);
+    margin-inline:auto;
+    align-self:center;
+  }
   .hero{grid-template-columns:1fr;padding:calc(36px + var(--nav-h) + 40px) 24px 60px;gap:40px}
   .fb-left,.fb-right{display:none}
   .stats-section{grid-template-columns:1fr 1fr}

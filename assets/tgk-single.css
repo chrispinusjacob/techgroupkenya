@@ -967,6 +967,15 @@ nav {
   .tgk-legal-links {
     justify-content: center;
   }
+  .tgk-footer-section:has(.tgk-footer-donate) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .tgk-footer-donate {
+    margin-inline: auto;
+  }
 }
 @media (max-width: 600px) {
   .tgk-site-footer {
@@ -1196,6 +1205,18 @@ body {
   }
   #donate.pricing-section .pricing-grid {
     margin-top: 28px;
+  }
+  #donate .price-card {
+    text-align: center;
+  }
+  #donate .price-features {
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+  }
+  #donate .price-btn {
+    margin-inline: auto;
+    max-width: 280px;
   }
   .price-card {
     padding: 28px 22px;
