@@ -14,7 +14,15 @@
     }, 2000);
   }
 
-  window.addEventListener('load', hidePageLoader);
+  if (document.readyState === 'complete') {
+    hidePageLoader();
+  } else {
+    window.addEventListener('load', hidePageLoader);
+  }
+
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) hidePageLoader();
+  });
 
   window.TGK_LOADER = {
     hidePageLoader: hidePageLoader,

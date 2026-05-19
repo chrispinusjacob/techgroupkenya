@@ -233,24 +233,10 @@ function togglePricing(){
   });
 }
 
-const faqs=[
-  {q:'What is Tech Group Kenya?',a:'Tech Group Kenya is a tech startup and community hub that connects developers, students, and startups across Kenya through learning, networking, events, and career opportunities.'},
-  {q:'How do I join the community?',a:'Visit our Linktree at redirect.techgroupkenya.co.ke to join WhatsApp channels, follow social media, and access all community links in one place — it is free to join.'},
-  {q:'What services do you offer?',a:'We run a Tech Blog, Skill Me with free courses and job opportunities, and Tech Events including workshops and meetups. Explore everything on our Services page.'},
-  {q:'Is membership free?',a:'Yes. Joining the community and accessing many resources is free. We also welcome donations to help us grow outreach and opportunities for Kenya\'s next generation of innovators.'},
-  {q:'How can I support Tech Group Kenya?',a:'You can donate via M-Pesa or PayPal on our Donate page. Your support helps us provide more resources, events, and mentorship programs.'},
-  {q:'How do I contact the team?',a:'Email us at echo@techgroupkenya.co.ke or use the contact form on our Contact page. We are based in Nairobi, Kenya.'},
-  {q:'Do you offer jobs or internships?',a:'We share tech job listings, internships, and mentorship opportunities through our community channels and Skill Me. Join to stay updated.'},
-];
-const faqList=document.getElementById('faqList');
-faqs.forEach((f,i)=>{
-  const item=document.createElement('div');
-  item.className='faq-item';
-  item.innerHTML=`<div class="faq-q"><span class="faq-q-text">${f.q}</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></div><div class="faq-a">${f.a}</div>`;
-  item.querySelector('.faq-q').addEventListener('click',()=>{
-    item.classList.toggle('open');
+document.querySelectorAll('#faqList .faq-item .faq-q').forEach((q)=>{
+  q.addEventListener('click',()=>{
+    q.closest('.faq-item').classList.toggle('open');
   });
-  faqList.appendChild(item);
 });
 
 let allExpanded=false;
@@ -406,10 +392,10 @@ if(phoneFrame){
     'https://cdn.techgroupkenya.co.ke/images/hero2.jpg',
     'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
     'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero4.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero4.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero5.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero5.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero4.png',
+    'https://cdn.techgroupkenya.co.ke/images/hero4.png',
+    'https://cdn.techgroupkenya.co.ke/images/hero5.png',
+    'https://cdn.techgroupkenya.co.ke/images/hero5.png',
   ];
   let currentIndex=0;
   const updateBg=()=>{

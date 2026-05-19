@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://techgroupkenya.co.ke/sitemap.xml
+
+# Legal and error pages
+Disallow: /terms-of-service.html
+Disallow: /404.html

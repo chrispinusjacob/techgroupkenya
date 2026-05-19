@@ -1067,7 +1067,9 @@ nav.scrolled{background:rgba(15,19,25,.95);backdrop-filter:blur(20px);border-col
   font-size:14px;color:var(--text2);line-height:1.7;
   padding:0 24px;font-weight:300;
 }
-.faq-item.open .faq-a{max-height:200px;padding-bottom:20px}
+.faq-item.open .faq-a{max-height:480px;padding-bottom:20px}
+.faq-a a{color:var(--sky);text-decoration:underline;text-underline-offset:2px}
+.faq-a a:hover{color:var(--sky2)}
 
 footer{
   padding:40px max(48px, calc((100vw - var(--max-w)) / 2)) 28px;

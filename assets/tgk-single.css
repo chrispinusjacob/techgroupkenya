@@ -104,7 +104,7 @@ nav {
   z-index: 0;
   background-image: var(
     --hero-bg,
-    url('https://cdn.techgroupkenya.co.ke/images/hero1.png')
+    url('https://cdn.techgroupkenya.co.ke/images/hero1.jpg')
   );
   background-size: cover;
   background-position: center;
@@ -140,6 +140,20 @@ nav {
 .hero-content {
   min-width: 0;
   max-width: 100%;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.hero-brand {
+  color: var(--sky);
 }
 .hero h1 .hero-headline-lead {
   display: block;
@@ -757,12 +771,16 @@ nav {
   color: var(--sky);
   margin-bottom: 16px;
 }
-.tgk-footer-brand h3 {
+.tgk-footer-brand h3,
+.tgk-footer-brand-name {
   font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   text-transform: none;
   color: var(--text);
+}
+.tgk-footer-brand-name {
+  margin: 0 0 10px;
 }
 .tgk-footer-brand p {
   color: var(--text3);
