@@ -400,16 +400,16 @@ if(phoneFrame){
   const bg=hero&&hero.querySelector('.hero-bg');
   if(!hero||!bg)return;
   const images=[
-    'https://cdn.techgroupkenya.co.ke/images/hero1.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero1.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero2.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero2.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero3.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero3.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero4.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero4.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero5.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero5.png',
+    'https://cdn.techgroupkenya.co.ke/images/hero1.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero1.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero2.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero2.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero4.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero4.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero5.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/hero5.jpg',
   ];
   let currentIndex=0;
   const updateBg=()=>{
