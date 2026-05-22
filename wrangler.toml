@@ -1,8 +1,0 @@
-name = "techgroupkenya-security-headers"
-main = "cloudflare/worker.js"
-compatibility_date = "2024-08-01"
-
-# After deploy, attach route in Cloudflare Dashboard:
-# Workers Routes → *techgroupkenya.co.ke/*
-# Or uncomment and set your zone_id:
-# routes = [{ pattern = "techgroupkenya.co.ke/*", zone_id = "YOUR_ZONE_ID" }]
