@@ -1,3 +1,81 @@
+﻿(function () {
+  'use strict';
+
+  function hidePageLoader() {
+    var loader = document.getElementById('loader');
+    if (!loader || loader.dataset.dismissed === '1') return;
+    loader.dataset.dismissed = '1';
+    setTimeout(function () {
+      loader.style.transition = 'opacity 1s ease-out';
+      loader.style.opacity = '0';
+      setTimeout(function () {
+        loader.style.display = 'none';
+      }, 1000);
+    }, 2000);
+  }
+
+  if (document.readyState === 'complete') {
+    hidePageLoader();
+  } else {
+    window.addEventListener('load', hidePageLoader);
+  }
+
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) hidePageLoader();
+  });
+
+  window.TGK_LOADER = {
+    hidePageLoader: hidePageLoader,
+    setFormLoading: function (form, isLoading) {
+      if (!form) return;
+      var card = form.closest('.tgk-contact-form-card');
+      if (!card) return;
+      var btn = form.querySelector('[data-fs-submit-btn]');
+      var loader = card.querySelector('.tgk-form-loader');
+
+      if (isLoading) {
+        card.classList.add('is-submitting');
+        if (loader) {
+          loader.hidden = false;
+          loader.setAttribute('aria-hidden', 'false');
+        }
+        if (btn) {
+          if (!btn.dataset.defaultLabel) {
+            btn.dataset.defaultLabel = btn.textContent.trim();
+          }
+          btn.textContent = 'Sending...';
+        }
+      } else {
+        card.classList.remove('is-submitting');
+        if (loader) {
+          loader.hidden = true;
+          loader.setAttribute('aria-hidden', 'true');
+        }
+        if (btn && btn.dataset.defaultLabel) {
+          btn.textContent = btn.dataset.defaultLabel;
+        }
+      }
+    },
+  };
+})();
+
+(function initTgkEmailLinks(){
+  'use strict';
+  var DEFAULT_CODES='101,99,104,111,64,116,101,99,104,103,114,111,117,112,107,101,110,121,97,46,99,111,46,107,101';
+  function decode(codes){
+    return codes.split(',').map(function(n){return String.fromCharCode(parseInt(n,10));}).join('');
+  }
+  function apply(el){
+    var email=decode(el.getAttribute('data-tgk-e')||DEFAULT_CODES);
+    var label=el.getAttribute('data-tgk-email-label')||email;
+    el.href='mailto:'+email;
+    el.textContent=label;
+    el.setAttribute('aria-label','Email '+email);
+    el.classList.remove('tgk-email-pending');
+  }
+  document.querySelectorAll('.tgk-email').forEach(apply);
+})();
+
 document.querySelectorAll('.tgk-copyright-year').forEach((el)=>{
   el.textContent=String(new Date().getFullYear());
 });
@@ -137,10 +215,10 @@ function switchPeriod(btn,period){
   document.querySelectorAll('.dp-period-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   const configs={
-    '7d':{val:'12K+',change:'▲ Community members engaging this week'},
-    '1m':{val:'48+',change:'▲ Articles & resources published this month'},
-    '3m':{val:'24+',change:'▲ Events & workshops this quarter'},
-    '1y':{val:'Kenya',change:'▲ Nationwide tech community growth'},
+    '7d':{val:'12K+',change:'â–² Community members engaging this week'},
+    '1m':{val:'48+',change:'â–² Articles & resources published this month'},
+    '3m':{val:'24+',change:'â–² Events & workshops this quarter'},
+    '1y':{val:'Kenya',change:'â–² Nationwide tech community growth'},
   };
   const c=configs[period];
   chartVal.textContent=c.val;
@@ -158,7 +236,8 @@ const panelViews=document.querySelectorAll('.panel-view');
 const panelLabel=document.getElementById('panelLabel');
 const panelLabels=['Tech Blog','Skill Me','Tech Events'];
 stickyCards.forEach((card,i)=>{
-  card.addEventListener('click',()=>{
+  card.addEventListener('click',(e)=>{
+    if(e.target.closest('.sticky-card-cta'))return;
     stickyCards.forEach(c=>c.classList.remove('active'));
     panelViews.forEach(p=>p.classList.remove('active'));
     card.classList.add('active');
@@ -261,41 +340,14 @@ const testimonials=[
   {q:'Tech Group Kenya has been instrumental in my career growth. The community events and networking opportunities helped me land my dream job in software development.',name:'James M.',role:'Software Developer',init:'JM'},
   {q:'The tech blog and resources provided by Tech Group Kenya have been invaluable for staying updated with the latest trends and technologies in Kenya\'s tech scene.',name:'Grace W.',role:'Tech Entrepreneur',init:'GW'},
   {q:'As a student, Tech Group Kenya opened doors to internships and mentorship programs that shaped my career path. The community is truly supportive and innovative.',name:'David O.',role:'Computer Science Student',init:'DO'},
-  {q:'Tech Group Kenya is more than a community — it\'s a movement. The events and collaborations have helped our startup connect with investors and talented developers.',name:'Sarah N.',role:'Startup Founder',init:'SN'},
+  {q:'Tech Group Kenya is more than a community â€” it\'s a movement. The events and collaborations have helped our startup connect with investors and talented developers.',name:'Sarah N.',role:'Startup Founder',init:'SN'},
 ];
 const tt=document.getElementById('testiTrack');
-[...testimonials,...testimonials].forEach(t=>{
+testimonials.forEach(t=>{
   const el=document.createElement('div');
   el.className='testi-card';
   el.innerHTML=`<div class="testi-stars">${[...Array(5)].map(()=>'<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>').join('')}</div><p class="testi-quote">"${t.q}"</p><div class="testi-author"><div class="testi-avatar">${t.init}</div><div><div class="testi-name">${t.name}</div><div class="testi-role">${t.role}</div></div></div>`;
   tt.appendChild(el);
-});
-
-let testiPaused=false;
-function toggleTestimonials(){
-  testiPaused=!testiPaused;
-  tt.style.animationPlayState=testiPaused?'paused':'running';
-  const icon=document.getElementById('testiIcon');
-  const label=document.getElementById('testiLabel');
-  const btn=document.getElementById('testiToggle');
-  if(testiPaused){
-    icon.innerHTML='<polygon points="6,4 20,12 6,20"/>';
-    label.textContent='Play';
-    btn.setAttribute('aria-label','Play testimonials');
-  } else {
-    icon.innerHTML='<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>';
-    label.textContent='Pause';
-    btn.setAttribute('aria-label','Pause testimonials');
-  }
-}
-
-document.getElementById('testiToggle').addEventListener('mouseenter',function(){
-  this.style.borderColor='var(--sky)';
-  this.style.color='var(--sky)';
-});
-document.getElementById('testiToggle').addEventListener('mouseleave',function(){
-  this.style.borderColor='var(--border2)';
-  this.style.color='var(--text2)';
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
@@ -392,22 +444,26 @@ if(phoneFrame){
   if(!hero||!bg)return;
   const images=[
     'https://cdn.techgroupkenya.co.ke/images/hero1.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero1.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero2.jpg',
     'https://cdn.techgroupkenya.co.ke/images/hero2.jpg',
     'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
-    'https://cdn.techgroupkenya.co.ke/images/hero3.jpg',
     'https://cdn.techgroupkenya.co.ke/images/hero4.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero4.png',
-    'https://cdn.techgroupkenya.co.ke/images/hero5.png',
     'https://cdn.techgroupkenya.co.ke/images/hero5.png',
   ];
+  const preloaded=new Set();
+  function preloadHero(url){
+    if(preloaded.has(url))return;
+    preloaded.add(url);
+    const img=new Image();
+    img.src=url;
+  }
   let currentIndex=0;
   const updateBg=()=>{
     hero.classList.add('transitioning');
     bg.style.setProperty('--hero-bg',`url("${images[currentIndex]}")`);
+    preloadHero(images[(currentIndex+1)%images.length]);
     setTimeout(()=>hero.classList.remove('transitioning'),1200);
   };
+  preloadHero(images[0]);
   updateBg();
   setInterval(()=>{
     currentIndex=(currentIndex+1)%images.length;
@@ -493,4 +549,324 @@ if(phoneFrame){
     setTimeout(tick,delay);
   }
   tick();
+})();
+(function () {
+  'use strict';
+
+  var MIN_SUBMIT_MS = 3000;
+  var RATE_LIMIT_MS = 60000;
+  var RATE_LIMIT_KEY = 'tgk_contact_last_submit';
+  var HOURLY_COUNT_KEY = 'tgk_contact_hourly';
+  var MAX_PER_HOUR = 8;
+
+  var LIMITS = {
+    name: { min: 2, max: 100 },
+    email: { max: 254 },
+    subject: { min: 2, max: 200 },
+    message: { min: 10, max: 5000 },
+  };
+
+  var SUSPICIOUS = /<script|javascript:|on\w+\s*=|data:text\/html/i;
+
+  function $(id) {
+    return document.getElementById(id);
+  }
+
+  function trim(val) {
+    return String(val == null ? '' : val).trim();
+  }
+
+  function stripControlChars(val) {
+    return val.replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '');
+  }
+
+  function isValidEmail(email) {
+    if (email.length > LIMITS.email.max) return false;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+
+  function isValidName(name) {
+    if (name.length < LIMITS.name.min || name.length > LIMITS.name.max) return false;
+    return /^[\p{L}\p{M}\s'.-]+$/u.test(name);
+  }
+
+  function hasSuspiciousContent(val) {
+    return SUSPICIOUS.test(val);
+  }
+
+  function getHourlyCount() {
+    try {
+      var raw = sessionStorage.getItem(HOURLY_COUNT_KEY);
+      if (!raw) return { count: 0, windowStart: Date.now() };
+      var data = JSON.parse(raw);
+      if (Date.now() - data.windowStart > 3600000) {
+        return { count: 0, windowStart: Date.now() };
+      }
+      return data;
+    } catch (e) {
+      return { count: 0, windowStart: Date.now() };
+    }
+  }
+
+  function recordSubmit() {
+    try {
+      sessionStorage.setItem(RATE_LIMIT_KEY, String(Date.now()));
+      var hourly = getHourlyCount();
+      hourly.count += 1;
+      sessionStorage.setItem(HOURLY_COUNT_KEY, JSON.stringify(hourly));
+    } catch (e) { /* private mode */ }
+  }
+
+  function checkRateLimit() {
+    try {
+      var last = parseInt(sessionStorage.getItem(RATE_LIMIT_KEY) || '0', 10);
+      if (last && Date.now() - last < RATE_LIMIT_MS) {
+        return 'Please wait a minute before sending another message.';
+      }
+      var hourly = getHourlyCount();
+      if (hourly.count >= MAX_PER_HOUR) {
+        return 'Too many messages sent recently. Please try again later.';
+      }
+    } catch (e) { /* allow if storage blocked */ }
+    return null;
+  }
+
+  function checkHoneypot(form) {
+    var gotcha = form.querySelector('[name="_gotcha"]');
+    if (gotcha && trim(gotcha.value) !== '') {
+      return false;
+    }
+    var trap = form.querySelector('[name="website"]');
+    if (trap && trim(trap.value) !== '') {
+      return false;
+    }
+    return true;
+  }
+
+  function checkTiming(form) {
+    var loaded = form.querySelector('[name="form_loaded_at"]');
+    if (!loaded || !loaded.value) return false;
+    var loadedAt = parseInt(loaded.value, 10);
+    if (!loadedAt || Date.now() - loadedAt < MIN_SUBMIT_MS) {
+      return false;
+    }
+    return true;
+  }
+
+  function setFieldError(form, fieldName, message) {
+    var span = form.querySelector('[data-fs-error="' + fieldName + '"]');
+    if (span) span.textContent = message;
+    var field = form.querySelector('[name="' + fieldName + '"]');
+    if (field) field.setAttribute('aria-invalid', message ? 'true' : 'false');
+  }
+
+  function clearFieldErrors(form) {
+    form.querySelectorAll('[data-fs-error]').forEach(function (span) {
+      if (span.getAttribute('data-fs-error')) {
+        span.textContent = '';
+      }
+    });
+    form.querySelectorAll('[data-fs-field]').forEach(function (field) {
+      field.setAttribute('aria-invalid', 'false');
+    });
+  }
+
+  function showFormError(form, message) {
+    var banner = form.closest('.tgk-contact-form-card');
+    if (!banner) return;
+    var el = banner.querySelector('.tgk-formspree-error[data-fs-error]');
+    if (el) {
+      var text = el.querySelector('span');
+      if (text) text.textContent = message;
+      el.hidden = false;
+    }
+  }
+
+  function hideFormError(form) {
+    var banner = form.closest('.tgk-contact-form-card');
+    if (!banner) return;
+    var el = banner.querySelector('.tgk-formspree-error[data-fs-error]');
+    if (el) el.hidden = true;
+  }
+
+  function validateContactForm(form) {
+    clearFieldErrors(form);
+    hideFormError(form);
+
+    if (!checkHoneypot(form)) {
+      return { ok: false, silent: true };
+    }
+
+    if (!checkTiming(form)) {
+      showFormError(form, 'Please take a moment to complete the form before sending.');
+      return { ok: false };
+    }
+
+    var rateMsg = checkRateLimit();
+    if (rateMsg) {
+      showFormError(form, rateMsg);
+      return { ok: false };
+    }
+
+    var nameEl = form.querySelector('[name="name"]');
+    var emailEl = form.querySelector('[name="email"]');
+    var subjectEl = form.querySelector('[name="_subject"]');
+    var messageEl = form.querySelector('[name="message"]');
+    var name = stripControlChars(trim(nameEl && nameEl.value));
+    var email = stripControlChars(trim(emailEl && emailEl.value)).toLowerCase();
+    var subject = stripControlChars(trim(subjectEl && subjectEl.value));
+    var message = stripControlChars(trim(messageEl && messageEl.value));
+
+    var errors = {};
+
+    if (!isValidName(name)) {
+      errors.name = 'Enter your name (2â€“100 letters).';
+    }
+    if (!isValidEmail(email)) {
+      errors.email = 'Enter a valid email address.';
+    }
+    if (subject.length < LIMITS.subject.min || subject.length > LIMITS.subject.max) {
+      errors._subject = 'Subject must be between 2 and 200 characters.';
+    }
+    if (message.length < LIMITS.message.min || message.length > LIMITS.message.max) {
+      errors.message = 'Message must be between 10 and 5,000 characters.';
+    }
+
+    [name, email, subject, message].forEach(function (val, i) {
+      if (val && hasSuspiciousContent(val)) {
+        var keys = ['name', 'email', '_subject', 'message'];
+        errors[keys[i]] = 'Invalid characters detected. Please revise your entry.';
+      }
+    });
+
+    Object.keys(errors).forEach(function (key) {
+      setFieldError(form, key, errors[key]);
+    });
+
+    if (Object.keys(errors).length) {
+      return { ok: false };
+    }
+
+    var nameInput = form.querySelector('[name="name"]');
+    var emailInput = form.querySelector('[name="email"]');
+    var subjectInput = form.querySelector('[name="_subject"]');
+    var messageInput = form.querySelector('[name="message"]');
+    if (nameInput) nameInput.value = name;
+    if (emailInput) emailInput.value = email;
+    if (subjectInput) subjectInput.value = subject;
+    if (messageInput) messageInput.value = message;
+
+    return { ok: true };
+  }
+
+  function initLoadedTimestamp(form) {
+    var loaded = form.querySelector('[name="form_loaded_at"]');
+    if (loaded) loaded.value = String(Date.now());
+  }
+
+  function bindGuards(form) {
+    if (!form || form.dataset.tgkGuardsBound === '1') return;
+    form.dataset.tgkGuardsBound = '1';
+    initLoadedTimestamp(form);
+
+    form.addEventListener(
+      'submit',
+      function (e) {
+        var result = validateContactForm(form);
+        if (!result.ok) {
+          e.preventDefault();
+          e.stopImmediatePropagation();
+        }
+      },
+      true
+    );
+  }
+
+  function setFormLoading(form, isLoading) {
+    if (window.TGK_LOADER && window.TGK_LOADER.setFormLoading) {
+      window.TGK_LOADER.setFormLoading(form, isLoading);
+    }
+  }
+
+  window.TGK_CONTACT = {
+    validateContactForm: validateContactForm,
+    recordSubmit: recordSubmit,
+    bindGuards: bindGuards,
+    setFormLoading: setFormLoading,
+  };
+})();
+
+/* --- deferred third-party (formspree, analytics, chat) --- */
+(function initTgkDeferredThirdParty(){
+  "use strict";
+  var loaded=false;
+  function loadScript(src,opts){
+    return new Promise(function(resolve,reject){
+      var s=document.createElement("script");
+      s.src=src;
+      if(opts&&opts.async)s.async=true;
+      if(opts&&opts.defer)s.defer=true;
+      s.onload=function(){resolve(s);};
+      s.onerror=reject;
+      document.head.appendChild(s);
+    });
+  }
+  function initFormspree(){
+    window.formspree=window.formspree||function(){(formspree.q=formspree.q||[]).push(arguments);};
+    formspree("initForm",{
+      formElement:"#tgk-contact-form",
+      formId:"xaqknboz",
+      onInit:function(ctx){if(window.TGK_CONTACT)window.TGK_CONTACT.bindGuards(ctx.form);},
+      onSubmit:function(ctx){
+        if(!window.TGK_CONTACT)return;
+        var result=window.TGK_CONTACT.validateContactForm(ctx.form);
+        if(result.ok)window.TGK_CONTACT.setFormLoading(ctx.form,true);
+      },
+      onSuccess:function(ctx){
+        if(window.TGK_CONTACT){
+          window.TGK_CONTACT.setFormLoading(ctx.form,false);
+          window.TGK_CONTACT.recordSubmit();
+        }
+      },
+      onError:function(ctx){if(window.TGK_CONTACT)window.TGK_CONTACT.setFormLoading(ctx.form,false);},
+      onFailure:function(ctx){if(window.TGK_CONTACT)window.TGK_CONTACT.setFormLoading(ctx.form,false);}
+    });
+  }
+  function initGtag(){
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag=gtag;
+    gtag("js",new Date());
+    gtag("config","G-V6229JLDXD");
+  }
+  function initBrevo(){
+    window.BrevoConversationsID="68d578416ba9efa18304da65";
+    window.BrevoConversations=window.BrevoConversations||function(){(BrevoConversations.q=BrevoConversations.q||[]).push(arguments);};
+    loadScript("https://conversations-widget.brevo.com/brevo-conversations.js",{async:true});
+  }
+  function load(){
+    if(loaded)return;
+    loaded=true;
+    loadScript("https://unpkg.com/@formspree/ajax@1",{defer:true})
+      .then(initFormspree)
+      .catch(function(){});
+    loadScript("https://www.googletagmanager.com/gtag/js?id=G-V6229JLDXD",{async:true})
+      .then(initGtag)
+      .catch(function(){});
+    initBrevo();
+  }
+  var contact=document.getElementById("contact");
+  if(contact&&"IntersectionObserver"in window){
+    var io=new IntersectionObserver(function(entries){
+      if(entries.some(function(e){return e.isIntersecting;})){
+        load();
+        io.disconnect();
+      }
+    },{rootMargin:"200px"});
+    io.observe(contact);
+  }
+  var form=document.getElementById("tgk-contact-form");
+  if(form)form.addEventListener("focusin",load,{once:true,capture:true});
+  if("requestIdleCallback"in window){requestIdleCallback(load,{timeout:5000});}
+  else{window.addEventListener("load",function(){setTimeout(load,3000);});}
 })();

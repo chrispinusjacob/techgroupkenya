@@ -44,7 +44,7 @@ body.tgk-404-page {
 }
 
 .tgk-404-code {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(6rem, 22vw, 10rem);
   font-weight: 800;
   line-height: 0.95;
@@ -58,7 +58,7 @@ body.tgk-404-page {
 }
 
 .tgk-404-title {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-size: clamp(1.35rem, 4vw, 1.75rem);
   font-weight: 700;
   margin: 0 0 12px;
@@ -95,7 +95,7 @@ body.tgk-404-page {
 }
 
 .tgk-404-links-card h2 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.08em;

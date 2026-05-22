@@ -3,6 +3,6 @@ Allow: /
 
 Sitemap: https://techgroupkenya.co.ke/sitemap.xml
 
-# Legal and error pages
-Disallow: /terms-of-service.html
-Disallow: /404.html
+# Pages not in the sitemap use <meta name="robots" content="noindex, follow">:
+# terms-of-service.html, privacy-policy.html, 404.html, and redirect stubs
+# (about, contact, careers, donate, services). No Disallow needed.

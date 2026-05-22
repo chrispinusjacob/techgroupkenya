@@ -49,7 +49,7 @@ body.tgk-legal-page {
 
 .tgk-legal-article [data-custom-class='title'],
 .tgk-legal-article [data-custom-class='title'] * {
-  font-family: 'Outfit', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-size: 1.5rem !important;
   color: var(--text) !important;
   background: transparent !important;
@@ -57,7 +57,7 @@ body.tgk-legal-page {
 
 .tgk-legal-article [data-custom-class='subtitle'],
 .tgk-legal-article [data-custom-class='subtitle'] * {
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: var(--font-sans) !important;
   color: var(--text2) !important;
   font-size: 14px !important;
   background: transparent !important;
@@ -65,7 +65,7 @@ body.tgk-legal-page {
 
 .tgk-legal-article [data-custom-class='heading_1'],
 .tgk-legal-article [data-custom-class='heading_1'] * {
-  font-family: 'Outfit', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-size: 1.2rem !important;
   color: var(--sky) !important;
   background: transparent !important;
@@ -74,7 +74,7 @@ body.tgk-legal-page {
 
 .tgk-legal-article [data-custom-class='heading_2'],
 .tgk-legal-article [data-custom-class='heading_2'] * {
-  font-family: 'Outfit', sans-serif !important;
+  font-family: var(--font-display) !important;
   font-size: 1.05rem !important;
   color: var(--text) !important;
   background: transparent !important;
@@ -84,14 +84,14 @@ body.tgk-legal-page {
 .tgk-legal-article [data-custom-class='body_text'] * {
   color: var(--text2) !important;
   font-size: 14px !important;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: var(--font-sans) !important;
   background: transparent !important;
 }
 
 .tgk-legal-article [data-custom-class='link'],
 .tgk-legal-article [data-custom-class='link'] * {
   color: var(--sky) !important;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: var(--font-sans) !important;
   word-break: break-word !important;
 }
 
@@ -103,7 +103,7 @@ body.tgk-legal-page {
 .tgk-legal-article h1,
 .tgk-legal-article h2,
 .tgk-legal-article h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   color: var(--text);
 }
 
