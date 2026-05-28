@@ -550,6 +550,59 @@ if(phoneFrame){
   }
   tick();
 })();
+
+(function initPhonePreviewAlternator(){
+  const img=document.getElementById('phonePreview');
+  if(!img)return;
+
+  const sources=[
+    'https://cdn.techgroupkenya.co.ke/images/skillmescreenshot.jpg',
+    'https://cdn.techgroupkenya.co.ke/images/skillmepreview.jpg',
+  ];
+
+  // If the first one was changed in HTML, keep it as the starting source.
+  if(img.src){
+    const normalized=String(img.src);
+    const idx=sources.findIndex(u=>normalized.indexOf(u)===0);
+    if(idx>0){
+      sources.unshift(sources.splice(idx,1)[0]);
+    }
+  }
+
+  const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const INTERVAL_MS=4200;
+  const FADE_MS=450;
+  let current=0;
+
+  function preload(url){
+    const p=new Image();
+    p.src=url;
+  }
+
+  preload(sources[0]);
+  preload(sources[1]);
+
+  function swap(){
+    const next=(current+1)%sources.length;
+
+    if(reduceMotion){
+      img.src=sources[next];
+      current=next;
+      return;
+    }
+
+    img.style.opacity='0';
+    window.setTimeout(()=>{
+      img.src=sources[next];
+      img.alt='TGK Hub app preview';
+      img.style.opacity='1';
+      current=next;
+      preload(sources[(current+1)%sources.length]);
+    },FADE_MS);
+  }
+
+  window.setInterval(swap,INTERVAL_MS);
+})();
 (function () {
   'use strict';
 
